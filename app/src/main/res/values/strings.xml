@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Nots</string>
+    <string name="title_activity_write_word">WriteWordActivity</string>
 </resources>
