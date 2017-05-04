@@ -8,6 +8,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -15,6 +16,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import net.margaritov.preference.colorpicker.ColorPickerDialog;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -30,6 +33,7 @@ public class MainActivity extends Activity {
     private ConnectThread mConnectThread;
     private Button sendBtn;
     private ConnectedThread dataSendingThread;
+    private BluetoothDevice mDevice = null;
     Handler mHandler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,16 +47,6 @@ public class MainActivity extends Activity {
 
         this.initiateBluetoothConnection();
 
-        Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
-        BluetoothDevice mDevice = null;
-        if (pairedDevices.size() > 0) {
-            for (BluetoothDevice device : pairedDevices) {
-                if(device.getName().toString().equals("Wadee’s MacBook Pro")){
-                    Log.i(TAG, device.getName().toString());
-                    mDevice = device;
-                }
-            }
-        }
 
 
         //initialize the connection thread
@@ -69,6 +63,18 @@ public class MainActivity extends Activity {
                 MainActivity.this.dataSendingThread.write("bhjjbh".getBytes());
             }
         });
+
+        int color  = Color.parseColor("#005500");
+        ColorPickerDialog dialog = new ColorPickerDialog(this,color);
+        dialog.setTitle("Some Title");
+        dialog.show();
+        dialog.setOnColorChangedListener(new ColorPickerDialog.OnColorChangedListener() {
+            @Override
+            public void onColorChanged(int color) {
+                Toast.makeText(MainActivity.this, "The new Color is " + color, Toast.LENGTH_LONG).show();
+            }
+        });
+
 
     }
 
@@ -118,9 +124,6 @@ public class MainActivity extends Activity {
                 } catch (IOException closeException) { }
                 return;
             }
-
-
-//            dataSendingThread.start();
 
         }
         public void cancel() {
@@ -202,5 +205,17 @@ public class MainActivity extends Activity {
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(enableBtIntent, 1);
         }
+
+        Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
+
+        if (pairedDevices.size() > 0) {
+            for (BluetoothDevice device : pairedDevices) {
+                if(device.getName().toString().equals("Wadee’s MacBook Pro")){
+                    Log.i(TAG, device.getName().toString());
+                    this.mDevice = device;
+                }
+            }
+        }
+
     }
 }

@@ -16,4 +16,6 @@
         android:id="@+id/wordEditText"
         android:text="Choose a word"
         />
+
+
 </LinearLayout>
