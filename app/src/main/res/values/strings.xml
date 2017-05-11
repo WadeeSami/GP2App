@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Nots</string>
     <string name="title_activity_write_word">WriteWordActivity</string>
+    <string name="title_activity_notification_activity">NotificationActivityActivity</string>
+    <string name="title_activity_music_activity">MusicActivityActivity</string>
 </resources>

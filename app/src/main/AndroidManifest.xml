@@ -38,7 +38,13 @@
 
         <activity
             android:name=".WriteWordActivity"
-            android:label="@string/title_activity_write_word"></activity>
+            android:label="@string/title_activity_write_word" />
+        <activity
+            android:name=".NotificationActivity"
+            android:label="@string/title_activity_notification_activity" />
+        <activity
+            android:name=".MusicActivity"
+            android:label="@string/title_activity_music_activity"></activity>
     </application>
 
 </manifest>

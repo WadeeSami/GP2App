@@ -19,6 +19,7 @@ public class NLService extends NotificationListenerService {
         IntentFilter filter = new IntentFilter();
         filter.addAction("com.example.wadee.nots.NOTIFICATION_LISTENER_SERVICE_EXAMPLE");
         registerReceiver(nlservicereciver,filter);
+        Log.i(TAG, "Service started");
     }
 
     @Override
@@ -30,8 +31,8 @@ public class NLService extends NotificationListenerService {
     @Override
     public void onNotificationPosted(StatusBarNotification sbn) {
 
-        Log.i(TAG,"**********  onNotificationPosted");
-        Log.i(TAG,"ID :" + sbn.getId() + "\t" + sbn.getNotification().tickerText + "\t" + sbn.getPackageName()+ " DAta : " +  sbn.getNotification().tickerText );
+//        Log.i(TAG,"**********  onNotificationPosted");
+//        Log.i(TAG,"ID :" + sbn.getId() + "\t" + sbn.getNotification().tickerText + "\t" + sbn.getPackageName()+ " DAta : " +  sbn.getNotification().tickerText );
         Intent i = new  Intent("com.example.wadee.nots.NOTIFICATION_LISTENER_EXAMPLE");
         i.putExtra("notification_event","onNotificationPosted : " + sbn.getPackageName() + sbn.getNotification().tickerText + "\n");
         sendBroadcast(i);
