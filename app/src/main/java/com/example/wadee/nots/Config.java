@@ -13,7 +13,8 @@ public class Config {
     public static final String CHOSEN_WORD = "Chosen Word";
     public static final String CHOSEN_COLOR = "Chosen Color";
     public static final String CHOSEN_DEVICE = "HC-05";
-//    public static final String CHOSEN_DEVICE = "Wadee’s MacBook Pro";
+
+    public static final String NOTIFICATION_EXTRA = "not_extra";
 
     public static List<String> songs = new ArrayList<>(Arrays.asList("Rolling In the Deep", "Hello"));
 

@@ -1,9 +1,12 @@
 package com.example.wadee.nots;
 
 import android.app.IntentService;
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
+import android.support.v7.app.NotificationCompat;
 import android.util.Log;
 import android.widget.Button;
 
@@ -41,20 +44,19 @@ public class BluetoothService extends IntentService {
     public BluetoothService() {
         super("BluetoothService");
     }
-
+    private NotificationManager nNM = null;
 
     @Override
     public void onCreate() {
         super.onCreate();
+//        nNM = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
         Log.i(TAG, "Starting connection");
         this.getAvailableDevicesAndStartConnection();
     }
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        if (intent != null) {
 
-        }
     }
 
 
@@ -202,8 +204,8 @@ public class BluetoothService extends IntentService {
 
             this.connect();
             Log.i(TAG, "Connect method started");
-            this.write("j".getBytes());
-        }else{
+            this.write("whatsapp".getBytes());
+        } else {
             //there's no available devices
         }
 
@@ -213,24 +215,22 @@ public class BluetoothService extends IntentService {
     private void connect() {
 
 
-        final BluetoothDevice mmDevice;
         final UUID MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 
         BluetoothSocket tmp = null;
-
+        Log.i(TAG, "Connecction worked");
         try {
             tmp = this.mDevice.createRfcommSocketToServiceRecord(MY_UUID);
-//                tmp = device.createInsecureRfcommSocketToServiceRecord(MY_UUID);
         } catch (IOException e) {
             Log.i(TAG, "IO Exeption in ConnectThread constructor");
         }
 
         mmSocket = tmp;
+        Log.i(TAG, "Temp device    " + mDevice.getAddress());
         MainActivity.mBluetoothAdapter.cancelDiscovery();
 
         try {
             mmSocket.connect();
-            Log.i(TAG, "Connecction worked");
         } catch (IOException connectException) {
             try {
                 connectException.printStackTrace();
@@ -261,13 +261,29 @@ public class BluetoothService extends IntentService {
 //        Log.i(TAG, "Connection thread working !!!!! after init the trans, thread");
     }
 
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        Log.i(TAG, "OnStartCommand method");
+        if (intent != null) {
+            Log.i(TAG, "handling the intent in the service");
+            if(intent.getStringExtra(Config.NOTIFICATION_EXTRA) != null) {
+                this.write("whatsapp\n".getBytes());
+            }
+        }else {
+            Log.i(TAG, "Intent is nul ??? , WTF");
+        }
+        StartForground();
+        return START_STICKY;
+
+    }
 
     public void write(byte[] bytes) {
         try {
             mmOutStream.write(bytes);
-            Log.i(TAG, "Inside the wriee method");
+            Log.i(TAG, "Inside the write method");
 
         } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -278,4 +294,27 @@ public class BluetoothService extends IntentService {
         }
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.i(TAG, "Service destroyed !!!!");
+    }
+
+    private void StartForground() {
+        Notification notification = new NotificationCompat.Builder(this)
+                .setOngoing(false)
+                .setSmallIcon(android.R.color.transparent)
+
+                //.setSmallIcon(R.drawable.picture)
+                .build();
+        startForeground(101, notification);
+
+    }
+
+    @Override
+    public void onStart(Intent intent, int startId) {
+        super.onStart(intent, startId);
+        Log.i(TAG, "The onstart method");
+    }
 }
+

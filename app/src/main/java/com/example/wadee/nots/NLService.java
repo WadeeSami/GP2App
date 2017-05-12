@@ -25,6 +25,7 @@ public class NLService extends NotificationListenerService {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        Log.i(TAG, "NL service destroyed !!!");
         unregisterReceiver(nlservicereciver);
     }
 
