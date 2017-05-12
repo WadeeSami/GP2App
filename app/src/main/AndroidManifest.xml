@@ -44,7 +44,11 @@
             android:label="@string/title_activity_notification_activity" />
         <activity
             android:name=".MusicActivity"
-            android:label="@string/title_activity_music_activity"></activity>
+            android:label="@string/title_activity_music_activity" />
+
+        <service
+            android:name=".BluetoothService"
+            android:exported="false"></service>
     </application>
 
 </manifest>
