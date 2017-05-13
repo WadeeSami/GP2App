@@ -3,6 +3,7 @@ package com.example.wadee.nots;
 import android.app.IntentService;
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
@@ -15,6 +16,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Set;
 import java.util.UUID;
+
+import static com.example.wadee.nots.MainActivity.mBluetoothAdapter;
 
 /**
  * An {@link IntentService} subclass for handling asynchronous task requests in
@@ -89,7 +92,7 @@ public class BluetoothService extends IntentService {
 
         public void run() {
 
-            MainActivity.mBluetoothAdapter.cancelDiscovery();
+            mBluetoothAdapter.cancelDiscovery();
             try {
                 mmSocket.connect();
             } catch (IOException connectException) {
@@ -184,14 +187,15 @@ public class BluetoothService extends IntentService {
 
     private void getAvailableDevicesAndStartConnection() {
 
-        Set<BluetoothDevice> bondedDevices = MainActivity.mBluetoothAdapter.getBondedDevices();
+        Set<BluetoothDevice> bondedDevices = BluetoothAdapter.getDefaultAdapter().getBondedDevices();
+
         if (!bondedDevices.isEmpty()) {
             Log.i(TAG, "There are some bonded devices " + bondedDevices.size());
         }
-        Set<BluetoothDevice> pairedDevices = MainActivity.mBluetoothAdapter.getBondedDevices();
 
-        if (pairedDevices.size() > 0) {
-            for (BluetoothDevice device : pairedDevices) {
+
+        if (bondedDevices.size() > 0) {
+            for (BluetoothDevice device : bondedDevices) {
                 if (device.getName().toString().equals(Config.CHOSEN_DEVICE)) {
                     Log.i(TAG, device.getName().toString());
                     this.mDevice = device;
@@ -218,7 +222,6 @@ public class BluetoothService extends IntentService {
         final UUID MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 
         BluetoothSocket tmp = null;
-        Log.i(TAG, "Connecction worked");
         try {
             tmp = this.mDevice.createRfcommSocketToServiceRecord(MY_UUID);
         } catch (IOException e) {
@@ -227,7 +230,7 @@ public class BluetoothService extends IntentService {
 
         mmSocket = tmp;
         Log.i(TAG, "Temp device    " + mDevice.getAddress());
-        MainActivity.mBluetoothAdapter.cancelDiscovery();
+        mBluetoothAdapter.cancelDiscovery();
 
         try {
             mmSocket.connect();

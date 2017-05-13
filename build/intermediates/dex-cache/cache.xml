@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/Wadee/Desktop/ANdroidProjects/NotificationHandler/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
+        <dex dex="/Users/Wadee/Desktop/ANdroidProjects/NotificationHandler/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.1.0_39dbf83ac0a49c6a0f897ba572453b0c926cab40/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Wadee/Desktop/ANdroidProjects/NotificationHandler/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="aee64634871d88a419d59eb743c1258a60f19700">
+        <dex dex="/Users/Wadee/Desktop/ANdroidProjects/NotificationHandler/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.1.0_a955e3d2ea8215dcb2e51cf8f18d8f91eaf059a2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Wadee/Desktop/ANdroidProjects/NotificationHandler/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
+        <dex dex="/Users/Wadee/Desktop/ANdroidProjects/NotificationHandler/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.1.0_5577a504eb5841ac0cc7969517aaf9bf089c3588/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Wadee/Desktop/ANdroidProjects/NotificationHandler/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1630658fbc2d222b988603c27b4a4249586fbfe7">
+        <dex dex="/Users/Wadee/Desktop/ANdroidProjects/NotificationHandler/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.1.0_1f2d82d4c6f146d1e6552b95058f7dbab174da62/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Wadee/Desktop/ANdroidProjects/NotificationHandler/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
+        <dex dex="/Users/Wadee/Desktop/ANdroidProjects/NotificationHandler/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.1.0_46f5c5c9c9a802c51b0744ae571e144d145707d5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Wadee/Desktop/ANdroidProjects/NotificationHandler/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
+        <dex dex="/Users/Wadee/Desktop/ANdroidProjects/NotificationHandler/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.1.0_f43745250e03963c513dd8d731dcbac9497fd805/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Wadee/Desktop/ANdroidProjects/NotificationHandler/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
+        <dex dex="/Users/Wadee/Desktop/ANdroidProjects/NotificationHandler/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.1.0_e65c3e8a0704fd1eb3bdf9b1af5acf769471cb7d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Wadee/Desktop/ANdroidProjects/NotificationHandler/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="eb67d1f34a4b82487ef098da66a75a6746f45366">
+        <dex dex="/Users/Wadee/Desktop/ANdroidProjects/NotificationHandler/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_0c0198a03ddbf903e3656fd67cf83adb6098dc08/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Wadee/Desktop/ANdroidProjects/NotificationHandler/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8759c6a0684feca4d1b7fa7d2a24621ae787da94">
+        <dex dex="/Users/Wadee/Desktop/ANdroidProjects/NotificationHandler/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_113fe0615fd0af84b90d196f3eada3760a98c90e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Wadee/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.1.0/support-annotations-25.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
+        <dex dex="/Users/Wadee/Desktop/ANdroidProjects/NotificationHandler/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.1.0_1794eea51622632a9e076b9327bd2943b4a7cb4d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Wadee/Desktop/ANdroidProjects/NotificationHandler/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
+        <dex dex="/Users/Wadee/Desktop/ANdroidProjects/NotificationHandler/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.1.0_6869ac717e02531fa33a4754ac92cf80f7d5962b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Wadee/Desktop/ANdroidProjects/NotificationHandler/app/build/intermediates/exploded-aar/net.margaritov.preference.colorpicker.ColorPickerPreference/ColorPickerPreference/1.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f5c833fd791609de66f1c0e66be8b6d6c5afec87">
+        <dex dex="/Users/Wadee/Desktop/ANdroidProjects/NotificationHandler/app/build/intermediates/transforms/dex/debug/folders/1000/10/net.margaritov.preference.colorpicker.ColorPickerPreference-ColorPickerPreference-1.0.0_09e16cac3bc893812c97a3484aa18c30973d896e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Wadee/Desktop/ANdroidProjects/NotificationHandler/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/Wadee/Desktop/ANdroidProjects/NotificationHandler/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.1.0_18f499b6c111f1f55221dbfd8076ad1255ff19ef/classes.dex" />
+    </item>
+
+</items>
